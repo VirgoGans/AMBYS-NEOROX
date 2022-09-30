@@ -399,14 +399,14 @@ function ucapan() {
   return res
 }
 
-//By fahri adison = https://github.com/FahriAdison
+//By Xiao San = -
 
  async function genProfile(conn, m) {
     font = await jimp.loadFont('./name.fnt'),
     mask = await jimp.read('https://i.imgur.com/552kzaW.png'),
     res = JSON.parse(fs.readFileSync('./api/thumb.json')),
     welcome = await jimp.read(res.getRandom()),
-    avatar = await jimp.read(await conn.profilePictureUrl(m.sender, 'image').catch(() => 'https://telegra.ph/file/24fa902ead26340f3df2c.png')),
+    avatar = await jimp.read(await conn.profilePictureUrl(m.sender, 'image').catch(() => 'https://telegra.ph/file/4b6267edb0519bd5b1482.jpg')),
     status = (await conn.fetchStatus(m.sender).catch(console.log) || {}).status?.slice(0, 30) || 'Not Detected'
 
     await avatar.resize(460, 460)
